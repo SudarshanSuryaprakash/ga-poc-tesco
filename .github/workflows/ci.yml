@@ -1,3 +1,5 @@
+name: CI
+
 on:
   pull_request: 
     branches: ['main']
@@ -13,11 +15,13 @@ jobs:
          node-version: 14
       - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn
       - name: Lint
         run: yarn lint
       - name: Build
         run: yarn build
       - name: Typecheck
-        run: tsc
+        run: yarn typecheck
       - name: Test
-        run: jest
+        run: yarn test

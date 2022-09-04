@@ -22,6 +22,6 @@ jobs:
       - name: Build
         run: yarn build
       - name: Typecheck
-        run: tsc
+        run: yarn typecheck
       - name: Test
-        run: jest
+        run: yarn test
